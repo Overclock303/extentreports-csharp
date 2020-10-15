@@ -26,11 +26,11 @@
 						}
 						@if (node.HasScreenCapture) { @foreach (var sc in node.ScreenCaptureContext.All()) { @sc.Source } }
 					</div>
+					@if (node.HasChildren)
+					{
+						@Include("RecurseNodes", node)
+					}
 				</div>
-				@if (node.HasChildren)
-				{
-					@Include("RecurseNodes", node)
-				}
 			</div>
 		}
 	</div>
